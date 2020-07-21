@@ -1,0 +1,72 @@
+const WORDS = {
+    lengthOf6: ['purple', 'orange', 'family', 'twelve', 'silver', 'thirty', 'donate', 'people', 'future', 'Heaven', 'banana', 'Africa', 'Monday', 'office', 'nature', 'eleven',
+    'Mumbai', 'animal', 'twenty', 'snitch', 'Rachel', 'Friday', 'Father', 'yellow', 'poetry', 'August', 'broken', 'potato', 'Sunday', 'circle', 'school', 'breath', 'moment', 'circus',
+    'person', 'scarce', 'London', 'energy', 'sister', 'spring', 'change', 'monkey', 'system', 'Austin', 'secret', 'pirate', 'turtle', 'ninety', 'mother',
+    'Disney', 'winter', 'Jordan', 'bucket', 'Indian', 'George', 'doctor', 'strong', 'forest', 'Canada', 'Morgan', 'joyful', 'memory', 'season', 'Sydney', 'Friend', 'ending', 'loving',
+    'Andrew', 'Adrian', 'cookie', 'silent', 'talent', 'turkey', 'better', 'bottle', 'happen', 'wonder', 'number', 'little', 'Daniel', 'spirit', 'melody', 'lovely', 'Carlos', 'ginger',
+    'cousin', 'couple', 'bridge', 'tomato', 'enough', 'dragon', 'lonely', 'beaver', 'Julian', 'market', 'health', 'beauty', 'simple', 
+    'legend', 'toilet', 'pepper', 'famous', 'oxygen', 'hunter'],
+    
+    lengthOf7: ['perfect', 'Tuesday', 'country', 'pumpkin', 'special', 'America', 'freedom', 'picture', 'husband', 'monster', 'seventy', 'Melissa', 'nothing', 'jessica', 'sixteen',
+    'morning', 'journey', 'history', 'Georgia', 'fifteen', 'amazing', 'rihanna', 'January', 'dolphin', 'teacher', 'forever', 'kitchen', 'holiday', 'Madison', 'welcome', 'Jupiter',
+    'justice', 'diamond', 'courage', 'hundred', 'silence', 'someone', 'science', 'revenge', 'leonine', 'harmony', 'problem', 'awesome', 'penguin', 'youtube', 'blanket', 'yielder',
+    'England', 'dancing', 'musical',
+    'crossed', 'imagine', 'Florida', 'student', 'mercury', 'initial', 'mystery', 'natural', 'kingdom', 'captain', 'healthy', 'library', 'message', 'magical', 'failure', 'forward', 'honesty',
+    'nuclear', 'fitness', 'sausage', 'popcorn', 'vanilla', 'jasmine', 'stomach', 'fortune', 'chicken', 'friends', 'strange', 'crooked', 'cheetah', 'fashion', 'uniform', 'probity', 'company',
+    'Patrick', 'culture', 'liberty', 'general', 'Anthony', 'garbage', 'alcohol', 'goddess', 'Matthew', 'lobster', 'climate', 'Vanessa', 'capital', 'balance', 'example', 'purpose'],
+    
+    lengthOf8: ['thirteen', 'Thursday', 'princess', 'assonant', 'thousand', 'fourteen', 'language', 'chipotle', 'American', 'business', 'favorite', 'elephant', 'children', 'birthday',
+    'mountain', 'feminine', 'football', 'kindness', 'syllable', 'abdicate', 'treasure', 'Virginia', 'envelope', 'strength', 'together', 'memories', 'darkness', 'February', 'sandwich',
+    'calendar', 'bullying', 'equation', 'violence', 'marriage', 'building', 'internal', 'function', 'November', 'drooping', 'abortion', 'Victoria', 'squirrel', 'tomorrow', 'champion',
+    'sentence', 'personal', 'remember', 'daughter', 'hospital', 'ordinary',
+    'medicine', 'flawless', 'umbrella', 'Carolina', 'computer', 'distance', 'allusion', 'solution', 'presence', 'dopamine', 'homework', 'Jonathan', 'physical', 'innocent', 'worrying', 'anteater',
+    'yourself', 'eternity', 'anything', 'angelica', 'electric', 'baseball', 'tropical', 'goodness', 'doughnut', 'Paradise', 'insomnia', 'possible', 'kindling', 'Scotland', 'keyboard', 'gangster',
+    'positive', 'everyday', 'pregnant', 'fountain', 'sporadic', 'politics', 'accident', 'opposite', 'aquarium', 'dinosaur', 'chemical', 'Brittany', 'accurate', 'infinity', 'jennifer', 'swimming',
+    'serenity', 'republic'],
+
+    lengthOf9: ['fireboard', 'identical', 'chocolate', 'Christmas', 'beautiful', 'happiness', 'Wednesday', 'challenge', 'celebrate', 'adventure', 'important', 'consonant', 'Christian',
+    'dangerous', 'masculine', 'Australia', 'irregular', 'something', 'Elizabeth', 'knowledge', 'macaronic', 'pollution', 'President', 'wrestling', 'pineapple', 'adjective', 'secretary',
+    'undefined', 'Halloween', 'Amerindic', 'ambulance', 'alligator', 'seventeen', 'affection', 'congruent', 'community', 'different', 'vegetable', 'influence', 'structure', 'invisible',
+    'wonderful', 'packaging', 'provoking', 'nutrition', 'crocodile', 'education', 'abounding', 'beginning',
+    'brainless', 'boulevard', 'withering', 'breathing', 'sophomore', 'September', 'worthless', 'imperfect', 'breakfast', 'xylophone', 'hamburger', 'integrity', 'character', 'blessings',
+    'adversity', 'charlotte', 'confusion', 'abducting', 'afterlife', 'suffering', 'everybody', 'curiosity', 'Louisiana', 'celebrity', 'Delicious', 'turquoise', 'attention', 'companion',
+    'elocution', 'whimsical', 'difficult', 'agitation', 'necessary', 'lightning', 'chemistry', 'recycling', 'Catherine', 'treatment', 'spaghetti', 'billboard', 'agreement', 'territory',
+    'amendment', 'architect', 'fledgling', 'ecosystem', 'magnesium', 'twentieth', 'deception', 'Caribbean', 'generator', 'Jefferson', 'Kamasutra', 'perimeter', 'amphibian', 'addiction',
+    'preterite', 'radiation', 'orangutan', 'innocence', 'dandelion', 'nightmare', 'commodity', 'abundance', 'Galveston', 'direction', 'divergent', 'reference', 'sunflower', 'authority',
+    'abduction', 'moustache', 'inception', 'fireworks', 'happening', 'awareness', 'schnitzel', 'hurricane', 'listening', 'prejudice', 'preschool', 'criticism', 'tradition', 'scorching',
+    'professor', 'chameleon', 'anonymous', 'gathering', 'scientist', 'astronaut', 'accordion', 'brilliant', 'emptiness', 'fantastic', 'Cleveland', 'awakening', 'tangerine', 'legendary',
+    'waterfall', 'dedicated'],
+
+    lengthOf10: ['California', 'everything', 'aboveboard', 'Washington', 'basketball', 'weathering', 'characters', 'literature', 'perfection', 'volleyball', 'depression', 'homecoming',
+    'technology', 'maleficent', 'watermelon', 'appreciate', 'relaxation', 'convection', 'government', 'abominable', 'salmonella', 'strawberry', 'aberration', 'retirement', 'television',
+    'contraband', 'Alzheimers', 'silhouette', 'friendship', 'punishment', 'loneliness', 'university', 'Cinderella', 'confidence', 'restaurant', 'abstinence', 'blancmange', 'blackboard',
+    'discipline', 'renovation', 'helicopter', 'generation', 'adaptation', 'skateboard', 'lightboard', 'Apocalypse', 'understand', 'leadership', 'revolution', 'insulation',
+    'Antarctica', 'wilderness', 'motivation', 'pilgrimage', 'diabolical', 'kaepernick', 'orthopedic', 'conscience', 'reciprocal', 'absolution', 'management', 'rainforest', 'girlfriend',
+    'trampoline', 'resolution', 'vegetables', 'accountant', 'expression', 'illuminati', 'earthquake', 'protection', 'tambourine', 'endearment', 'individual', 'innovation', 'abstaining',
+    'gymnastics', 'excitement', 'allocution', 'elementary', 'conference', 'adrenaline', 'accomplish', 'instrument', 'ubiquitous', 'accounting', 'concussion', 'speechless', 'mozzarella',
+    'compliment', 'appearance', 'difference', 'accelerate', 'underworld', 'affliction', 'everywhere', 'bronchitis', 'breathless', 'disposable', 'consummate'],
+
+    lengthOf11: ['undemanding', 'information', 'preposition', 'abomination', 'personality', 'subtraction', 'quadrillion', 'syllabicate', 'alternative', 'celebration', 'cleanliness',
+    'anniversary', 'forgiveness', 'belligerent', 'imagination', 'serendipity', 'segregation', 'inspiration', 'marshmallow', 'electricity', 'caterpillar', 'abiogenesis', 'intelligent',
+    'Shakespeare', 'environment', 'destination', 'Christopher', 'advertising', 'excoriation', 'unstoppable', 'appreciated', 'quintillion', 'invigilator', 'exterminate', 'photography',
+    'responsible', 'collocation', 'accessories', 'complicated', 'agriculture', 'perambulate', 'demarcation', 'barbiturate', 'rebarbative', 'certificate', 'worldliness', 'colonoscopy',
+    'androgynous', 'ablactation', 'nothingness', 'everlasting', 'communicate', 'defloration', 'retribution', 'cheerleader', 'achievement', 'abracadabra', 'application', 'counterfeit',
+    'Constantine', 'californium', 'evaporation', 'perspective', 'amphetamine', 'cooperation', 'reservation', 'mathematics', 'metamorphic', 'remembering', 'independent', 'prognathous',
+    'Philippines', 'spectacular', 'infatuation', 'ingredients', 'abandonment', 'emotionless', 'captivating', 'convolution', 'Connecticut', 'consequence', 'Abecedarian', 'appraisable',
+    'pollination', 'measurement', 'association', 'Switzerland', 'commutative', 'affirmation', 'hospitality', 'magnificent', 'susurration', 'Mesopotamia', 'rapscallion', 'amaranthine',
+    'translation', 'temperature', 'chlorophyll', 'pomegranate', 'grasshopper'],
+
+    lengthOf12: ['alliteration', 'unidentified', 'intermittent', 'Pennsylvania', 'exacerbation', 'independence', 'commensalism', 'intelligence', 'relationship', 'thanksgiving', 'professional',
+    'organization', 'sporadically', 'intimidating', 'abolitionist', 'onomatopoeia', 'appreciation', 'annunciation', 'malnutrition', 'architecture', 'biodiversity', 'acceleration', 'interdiction',
+    'trigonometry', 'communicator', 'bodybuilding', 'perspiration', 'appertaining', 'resurrection', 'constipation', 'civilization', 'velociraptor', 'retrocession', 'expectations',
+    'ambidextrous', 'cytoskeleton', 'hippopotamus', 'interjection', 'exasperation', 'felicitation', 'abbreviation', 'voluminosity', 'rambunctious', 'colonization', 'interception',
+    'championship', 'acquaintance', 'depreciation', 'consequences', 'grandparents', 'refrigerator', 'cantankerous', 'kaleidoscope', 'exhilarating', 'neighborhood', 'anticipation',
+    'stridulation', 'electrifying', 'prescription', 'condensation', 'affectionate', 'philandering', 'progesterone', 'Philadelphia', 'pericarditis', 'veterinarian', 'Frankenstein',
+    'alliterative', 'apperception', 'surroundings', 'announcement', 'predilection', 'bioterrorism', 'conservation', 'transmission', 'echolocation', 'cartographer', 'encyclopedia',
+    'conservative', 'hypothalamus', 'uncomparable', 'supercilious', 'colonisation', 'agribusiness', 'blandishment', 'overwhelming', 'intellectual', 'approachable', 'doppelganger',
+    'supernatural', 'finalisation', 'constitution', 'absquatulate', 'reproduction', 'excruciating', 'degeneration', 'amphitheater', 'headquarters', 'repossession', 'reliableness']
+}
+
+const VOWELS = ['a', 'e', 'i', 'o', 'u'];
+
+const BASE_IMG_SRC = './assets/images/';
