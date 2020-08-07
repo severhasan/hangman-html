@@ -69,4 +69,4 @@ const WORDS = {
 
 const VOWELS = ['a', 'e', 'i', 'o', 'u'];
 
-const BASE_IMG_SRC = './assets/images/';
+const BASE_IMG_SRC = 'assets/images/';
